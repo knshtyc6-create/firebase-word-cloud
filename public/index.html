@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文字雲製作器</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="workspace" aria-label="文字雲製作器">
+      <aside class="controls">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">文</span>
+          <div>
+            <h1>文字雲製作器</h1>
+            <p>貼上文字，快速產生可下載的關鍵字視覺。</p>
+          </div>
+        </div>
+
+        <label class="field">
+          <span>文字內容</span>
+          <textarea id="sourceText" spellcheck="false"></textarea>
+        </label>
+
+        <div class="grid-two">
+          <label class="field">
+            <span>顯示詞數</span>
+            <input id="wordLimit" type="number" min="12" max="90" step="1" value="46">
+          </label>
+          <label class="field">
+            <span>密度</span>
+            <input id="density" type="range" min="70" max="120" value="94">
+          </label>
+        </div>
+
+        <fieldset class="palette" aria-label="色彩主題">
+          <legend>色彩主題</legend>
+          <button class="swatch active" type="button" data-palette="classroom" aria-label="黑板綠"></button>
+          <button class="swatch coral" type="button" data-palette="coral" aria-label="珊瑚紅"></button>
+          <button class="swatch ink" type="button" data-palette="ink" aria-label="墨色藍"></button>
+        </fieldset>
+
+        <div class="actions">
+          <button id="renderBtn" class="primary" type="button">產生文字雲</button>
+          <button id="shuffleBtn" type="button">重新排列</button>
+          <button id="downloadBtn" type="button">下載 PNG</button>
+        </div>
+      </aside>
+
+      <section class="stage">
+        <div class="stats" aria-live="polite">
+          <span id="totalWords">0 個詞</span>
+          <span id="topWord">尚未分析</span>
+        </div>
+        <canvas id="cloudCanvas" width="1200" height="760" aria-label="文字雲畫布"></canvas>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
