@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "project-53493210641387818"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
